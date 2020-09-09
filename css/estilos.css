@@ -80,6 +80,9 @@ ul{
 .table{
     margin-top: 20px;
 }
+.align-middle {
+    vertical-align: middle;
+}
 /*HEADER*/
 .site-header{
     background-color: rgb(209, 184, 100);
