@@ -49,8 +49,8 @@ ul{
     width: 70%;
 }
 .img-productos{
-    height: 250px;
-    width: 200px;
+    width: 100%;
+    max-height: 450px;
 }
 .img-contacto{
     width: 20vh;
