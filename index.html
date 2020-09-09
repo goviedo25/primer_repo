@@ -89,8 +89,21 @@
         </p>
       </article>
     </section>
+    <div class="foto-pie-pagina"></div>
+    <aside class="seccion-juego text-center">
+      <div class="container">
+        <h2>Jugamos ?</h2>
+        <h3>Adivina adivinador....</h3>
+        <p class="font-oblique">
+          En verano barbudo y en invierno desnudo.. Esto es duro!
+        </p>
+        <p class="font-oblique">
+          Que es ? <input type="text" id="respuesta" />
+        </p>
+        <button onclick="jugar()">Responder</button>
+      </div>
+    </aside>
     <footer class="site-footer">
-      <div class="foto-pie-pagina"></div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md">
@@ -110,5 +123,38 @@
         </div>
       </div>
     </footer>
+    <script>
+      function jugar() {
+        var cant_intentos = 4;
+        var acerto = false;
+        var respuesta_correcta = "Bosque";
+        var respuesta;
+
+        var respuesta = document.getElementById("respuesta").value;
+        if (respuesta == "") {
+          alert("Por favor ingrese una respuesta");
+        } else {
+          while (cant_intentos > 0 && acerto != true) {
+            cant_intentos--;
+            if (respuesta == respuesta_correcta) {
+              alert("Acertaste! Cuidemos nuestros bosques :)");
+              acerto = true;
+            } else if (cant_intentos > 2) {
+              respuesta = prompt("Casi.. Otro intento!");
+            } else if (cant_intentos == 2) {
+              respuesta = prompt(
+                "Te quedan 2 intentos, una pista: lo habitan muchos seres vivos"
+              );
+            } else if (cant_intentos == 1) {
+              respuesta = prompt(
+                "Te queda 1 intento, ultima pista: una sola palabra, contiene 3 vocales, primer letra en mayuscula!!"
+              );
+            } else {
+              alert("Maldicion ! Perdiste :(");
+            }
+          }
+        }
+      }
+    </script>
   </body>
 </html>
